@@ -6,18 +6,16 @@ alphabet_dict = {v:k for k, v in dict(enumerate(alphabet_list)).items()}
 
 while True:
     l = int(input())
-    if l < 1 or l > 50:
-        continue
+    string = input()
+    if len(string) == l and string.isalpha():
+        string = list(string.lower())
+        break
     else:
-        string = input()
-        if len(string) == l and string.isalpha():
-            string = list(string.lower())
-            break
-        else:
-            continue
+        continue
 
 H = 0
-for i in range(len(string)):
+for i in range(l):
     ai = alphabet_dict.get(string[i])+1
-    H += ai * pow(r, i, M) % M
+    H += ai * pow(r, i, M)
+    H %= M
 print(H)
