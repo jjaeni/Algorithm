@@ -1,3 +1,4 @@
+# gpt ver.
 from collections import defaultdict
 
 def solution(genres, plays):
