@@ -1,6 +1,4 @@
-A, B, C = map(int, input().split())
-lst = [A, B, C]
+lst = list(map(int, input().split()))
+lst.sort()
 
-for e in lst:
-    if e != min(lst) and e != max(lst):
-        print(e)
+print(lst[1])
